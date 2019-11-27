@@ -1,0 +1,38 @@
+{
+    "name": "Send Command and Navigate",
+    "author": "Robert Brodt",
+    "description": "Clicking widget will send an Item command and then navigate to a given dashboard",
+    "settings": [
+        {
+            "type": "string",
+            "id": "dashboard_name",
+            "label": "Dashboard name"
+        },
+        {
+            "type": "string",
+            "id": "label",
+            "label": "Label"
+        },
+        {
+            "type": "icon",
+            "id": "background_icon",
+            "label": "Background Icon"
+        },
+        {
+            "type": "string",
+            "id": "font_size",
+            "label": "Font size"
+        },
+        {
+            "type": "item",
+            "id": "button_item",
+            "label": "Button Click Item"
+        },
+        {
+            "type": "string",
+            "id": "button_value",
+            "label": "Button Click Value"
+        }
+    ],
+    "template": "<style>\n  .command-navigate {\n    background: transparent;\n    border: 0;\n    width: 100%;\n    padding: 25px 0;\n    font-size: {{config.font_size}};\n    outline: none;\n  }\n  .command-icon {\n    position:absolute;\n    left:0px;\n    top:0px;\n    width:100%;\n    height:100%;\n  }\n</style>\n<a class=\"command-navigate\" href=\"#/view/{{config.dashboard_name}}\"  ng-click=\"sendCmd(config.button_item, config.button_value)\">\n  <img class=\"command-icon\" src=\"{{config.background_icon}}\"/>\n  {{config.label}}\n</a>"
+}
